@@ -11,7 +11,8 @@ USER root
 #RUN useradd -ms /bin/bash main
 USER main
 WORKDIR /home/main
-
+RUN conda config --add channels conda-forge
+RUN conda install -y nipype
 #RUN find $HOME/notebooks -name '*.ipynb' -exec ipython trust {} \;
 
 ENV SHELL /bin/bash
